@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+* {
+  list-style: none;
+}
+
+body {
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 100vh;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.button {
+  text-align: right;
+  padding-bottom: 2%;
+  padding-right: 2%;
+}
+
+.food-title {
+  text-align: center;
+}
+
+.add-food {
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+}
+
+.food-form {
+  padding: 10px;
+}
+
+.recipe-body {
+  display: flex;
+  column-gap: 30px;
+  align-items: baseline;
+}
