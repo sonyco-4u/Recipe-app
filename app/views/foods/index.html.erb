@@ -1,14 +1,33 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Foods</h1>
-
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
-  <% end %>
+<div>
+  <div class"food-title">
+    <h1>My Food List</h1>
+  </div>
+  <div class="Button">
+    <button class="btn btn-primary mt-3">
+      <%= link_to "Add Food", new_food_path, data: { turbo: false}, html: { method: :put}, class: "add-food" %>
+    </button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Measurement unit</th>
+        <th scope="col">Unit price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name%></td>
+            <td><%= food.measurement_unit%></td>
+            <td><%= food.price%></td>
+            <th scope="col"><%= link_to "Delete", food_path(food.id), method: :delete %></th>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
 </div>
 
-<%= link_to "New food", new_food_path %>
+
+
