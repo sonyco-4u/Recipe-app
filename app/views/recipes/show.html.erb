@@ -35,20 +35,17 @@
       </tr>
     </thead>
     <tbody>
-      <% @food.each do |food| %>
-        <tr>
-          <% @foods.each do |food| %>
+      <% @foods.each do |food| %>
             <tr>
               <td><%= food.name%></td>              
               <td><%= food.measurement_unit%></td>          
               <td>$ <%= food.price%></td>
               <th scope="col">
-                <%= link_to "Modify", food_path(food.id, method: :update)
-                <%= link_to "Remove", food_path(food.id, method: :delete``)    
+                <%= link_to "Modify", food_path(food.id), method: :update %>
+                <%= link_to "Remove", food_path(food.id), method: :delete %>  
               </th>            
             </tr>
-          <% end %>
-        </tr>
+      <% end %>
     </tbody>
   </table>
   <div class="recipe-btn">
