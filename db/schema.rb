@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_15_122429) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_17_055134) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,14 +19,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_122429) do
     t.string "measurement_unit"
     t.decimal "price", precision: 8, scale: 2
     t.integer "quantity"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
   create_table "recipefoods", force: :cascade do |t|
     t.integer "quantity"
+    t.bigint "recipe_id", null: false
+    t.bigint "food_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_recipefoods_on_food_id"
+    t.index ["recipe_id"], name: "index_recipefoods_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -35,8 +41,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_122429) do
     t.decimal "cooking_time", precision: 5, scale: 2
     t.text "description"
     t.boolean "public"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,8 +60,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_122429) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "foods", "users"
+  add_foreign_key "recipefoods", "foods"
+  add_foreign_key "recipefoods", "recipes"
+  add_foreign_key "recipes", "users"
 end
