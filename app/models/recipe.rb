@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
   def total_food_items
     foods.size
   end
-  
+
   def total_price
     foods.sum('price')
   end
