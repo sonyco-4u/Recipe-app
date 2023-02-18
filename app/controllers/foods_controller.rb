@@ -26,7 +26,7 @@ class FoodsController < ApplicationController
   # DELETE /foods/1 or /foods/1.json
   def destroy
     @food = set_food
-    @food.delete
+    @food.destroy
     respond_to do |format|
       format.html { redirect_to foods_url, notice: 'Food was successfully deleted.' }
     end
