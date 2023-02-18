@@ -83,11 +83,11 @@ In order to run this project you need:
 - Twitter: [@EZEMASUN](https://twitter.com/EZEMASUN)
 - LinkedIn: [ezema-anthony-sunday](https://www.linkedin.com/in/sunday-athony-ezema/)
 
-**Kelvin Benjamin**
+👤 **Kelvin Benjamin**
 
 - GitHub: [@Kelvin-Ben](https://github.com/Kelvin-Ben)
-- Twitter: [@Kevoyout144](https://twitter.com/kevoyout144)
-- LinkedIn: [@Kelvin-ben](https://www.linkedin.com/in/kelvin-ben-323043173/)
+- Twitter: [@kevoyout144](https://twitter.com/kevoyout144)
+- LinkedIn: [Kelvin-Ben](https://www.linkedin.com/in/kelvin-ben-323043173/)
 
 <!-- FUTURE FEATURES -->
 
