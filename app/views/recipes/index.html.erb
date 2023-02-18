@@ -1,8 +1,10 @@
 <div class="recipe">
   <h1>My list of Recipes</h1>
 </div>
-<div>
-  <%= link_to 'Add a new recipe', new_recipe_path %>
+<div class="button">
+  <button>
+    <%= link_to 'Add a new recipe', new_recipe_path %>
+  </button>
 </div>
 <% @recipes.each do |recipe| %>
   <div class="card mt-3">
@@ -10,15 +12,10 @@
       <div>
         <h1><%= link_to recipe.name, recipe_path(recipe) %></h1>
         <%= button_to "Delete", recipe_path(recipe.id), method: :delete %>
-      </div>
-      <div>
+        </div>
+        <div>
         <p><%= recipe.description %></p>
       </div>
     </div>
   </div>
 <% end %>
-<div class="post-btn">
-  <button>
-    <%= link_to "back", recipes_path %>
-  </button>
-<div>
