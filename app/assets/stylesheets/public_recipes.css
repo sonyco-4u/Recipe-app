@@ -5,6 +5,8 @@ h1 {
   margin: 0.3rem 0 0.6rem;
 }
 
+/* PUBLIC RECIPE */
+
 .public-recipes-section .recipe-public-card,
 .recipe-card {
   margin: 0 auto 1rem;
